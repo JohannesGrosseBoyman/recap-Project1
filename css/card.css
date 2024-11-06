@@ -1,11 +1,16 @@
 .question-card {
-  width: 90%;
+  max-width: 600px;
+  width: 80%;
   margin: 15px auto;
+  padding: 15 px;
   border: 2px solid var(--color-purple);
   border-radius: 10px;
   text-align: center;
   position: relative;
   height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .question-card__icon {
@@ -22,4 +27,23 @@
 
 .question-card__answer {
   display: none;
+}
+
+.category {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 0;
+}
+
+.category__tag {
+  background-color: var(--color-light-grey);
+  list-style: none;
+  width: 40%;
+  border: 2px solid var(--color-purple);
+  border-radius: 5px;
+  padding: 5px 10px;
 }
