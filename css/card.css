@@ -1,0 +1,25 @@
+.question-card {
+  width: 90%;
+  margin: 15px auto;
+  border: 2px solid var(--color-purple);
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  height: 30vh;
+}
+
+.question-card__icon {
+  position: absolute;
+  right: 10px;
+  top: -12px;
+  background-color: var(--color-light-grey);
+}
+.question-card__question {
+  margin: 10px;
+  background-color: var(--color-light-grey);
+  border-radius: 6px;
+}
+
+.question-card__answer {
+  display: none;
+}

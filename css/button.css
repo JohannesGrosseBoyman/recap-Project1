@@ -1,0 +1,12 @@
+.btn-answer {
+  margin: 0 30px;
+  width: 50%;
+  height: 30px;
+  background-color: var(--color-light-grey);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-answer:hover {
+  background-color: var(--color-grey);
+}
