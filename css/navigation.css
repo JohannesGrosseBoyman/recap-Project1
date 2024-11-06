@@ -1,0 +1,34 @@
+.category {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 0;
+}
+
+.category__tag {
+  background-color: var(--color-light-grey);
+  list-style: none;
+  width: 40%;
+  border: 2px solid var(--color-purple);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.navlink {
+  list-style: none;
+}
+
+.navlink a:hover {
+  background-color: var(--color-purple);
+}
