@@ -1,6 +1,8 @@
 .question-card {
-  width: 90%;
+  max-width: 600px;
+  width: 80%;
   margin: 15px auto;
+  padding: 15 px;
   border: 2px solid var(--color-purple);
   border-radius: 10px;
   box-shadow: 5px 5px 10px var(--color-purple);
@@ -39,6 +41,25 @@
 .category__tag {
   background-color: var(--color-light-grey);
   list-style: none;
+  border: 2px solid var(--color-purple);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.category {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 0;
+}
+
+.category__tag {
+  background-color: var(--color-light-grey);
+  list-style: none;
+  width: 40%;
   border: 2px solid var(--color-purple);
   border-radius: 5px;
   padding: 5px 10px;
