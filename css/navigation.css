@@ -11,6 +11,8 @@
   list-style: none;
 }
 
-.navlink a:hover {
+
+.nav__svg:hover {
+  transform: scale(1.5);
   background-color: var(--color-purple);
 }
