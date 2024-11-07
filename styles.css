@@ -9,6 +9,7 @@
   --color-light-grey: #e7e6e5;
   --color-grey: #8c947c;
   --color-purple: #7d1fc6;
+  --toggle-button-width: 100px;
 }
 
 * {
@@ -67,6 +68,10 @@ body {
   background-color: var(--color-purple);
 }
 
+.settings {
+  margin-bottom: 100px;
+}
+
 .settings-heading {
   padding-left: 20px;
   font-size: 2rem;
@@ -76,4 +81,51 @@ body {
   display: flex;
   gap: 100px;
   justify-content: space-around;
+  align-items: center;
+}
+
+.settings__h3--heading {
+  font-size: 1.5rem;
+}
+
+
+.toggleswitch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+
+.button {
+  background-color: var(--color-light-grey);
+  width: var(--toggle-button-width);
+  height: calc(var(--toggle-button-width) / 2);
+  border-radius: var(--toggle-button-width);
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+
+.button::before {
+  position: absolute;
+  content: "";
+  background-color: var(--color-grey);
+  width: calc(var(--toggle-button-width) * 0.45);
+  height: calc(var(--toggle-button-width) * 0.45);
+  border-radius: var(--toggle-button-width);
+  margin: calc(var(--toggle-button-width) * 0.025);
+  transition: 0.2s;
+}
+
+input:checked + .button {
+  background-color: var(--color-purple);
+}
+
+input:checked + .button::before {
+  transform: translateX(calc(var(--toggle-button-width) / 2))
+}
+
+input {
+  display: none;
 }
