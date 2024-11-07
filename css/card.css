@@ -37,7 +37,7 @@
 .category {
   margin: 10px 5px;
   display: flex;
-  justify-content: flex-start;
+  align-self: flex-start;
 }
 
 .category__tag {
