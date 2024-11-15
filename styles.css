@@ -3,6 +3,7 @@
 @import "./css/card.css";
 @import "./css/header.css";
 @import "./css/navigation.css";
+@import "./css/addQuestion.css";
 
 :root {
   --color-dark: #241d21;
@@ -29,16 +30,12 @@ body {
   margin: 0 auto;
 }
 
-
-
 .main-content {
   max-width: 600px;
   margin: 60px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-
 }
 
 .introduction {
@@ -50,7 +47,7 @@ body {
 
 .introduction--img {
   width: 200px;
-  border: 3px solid var(--color-dark) ;
+  border: 3px solid var(--color-dark);
   box-shadow: 10px 10px 20px;
 }
 
@@ -88,13 +85,10 @@ body {
   font-size: 1.5rem;
 }
 
-
 .toggleswitch {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  
 }
 
 .button {
@@ -123,7 +117,7 @@ input:checked + .button {
 }
 
 input:checked + .button::before {
-  transform: translateX(calc(var(--toggle-button-width) / 2))
+  transform: translateX(calc(var(--toggle-button-width) / 2));
 }
 
 input {
