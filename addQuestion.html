@@ -4,20 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="./js/addQuestion.js" defer ></script>
     <title>Quiz App add Question</title>
   </head>
   <body>
     <header class="header">
       <h1 class="header-main"> add Question</h1>
     </header>
-    <main class="main-content">
-      <form class="add-question">
+    <main class="main-content" data-js="main">
+      <form class="add-question" data-js="form">
         
         <h1 class="add-question__heading">Create a new question</h1>
         <label for="question"><h2 class=add-question__heading1>Your question:</h2></h2></label>
-        <textarea id="question" class="add-question__textarea"></textarea>
+        <textarea id="question" name="question" class="add-question__textarea"></textarea>
         <label for="answer"><h2 class="add-question__heading1">Your question:</h2></h2></label>
-        <textarea id="answer" class="add-answer__textarea"></textarea>
+        <textarea id="answer" name="answer" class="add-answer__textarea"></textarea>
       
         <label for="tag"><h2 class="add-question__heading1">Tag:</h2></label>
         <input type="text" id="tag" class="add-tag__input" name="tag" minlength="4" maxlength="8"/>
