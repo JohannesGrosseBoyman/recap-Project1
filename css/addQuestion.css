@@ -18,6 +18,10 @@
   border-radius: 6px;
 }
 
+.remaing-character {
+  text-align: right;
+}
+
 .add-tag__input {
   display: block;
   background-color: var(--color-light-grey);

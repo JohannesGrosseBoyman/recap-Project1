@@ -55,3 +55,17 @@ form.addEventListener("submit", (event) => {
   event.target.elements.question.focus();
   event.target.reset();
 });
+
+const inputQuestion = document.querySelector(`[data-js="question"]`);
+const remainingCharQuestion = document.querySelector(`[data-js="remaining-characters-question"]`);
+
+inputQuestion.addEventListener("input", (event) => {
+    remainingCharQuestion.textContent = `${150 - event.target.value.length} characters left`;
+})
+
+const inputAnswer = document.querySelector(`[data-js="answer"]`);
+const remainingCharAnswer = document.querySelector(`[data-js="remaining-characters-answer"]`);
+
+inputAnswer.addEventListener("input", (event) => {
+    remainingCharAnswer.textContent = `${150 - event.target.value.length} characters left`;
+})

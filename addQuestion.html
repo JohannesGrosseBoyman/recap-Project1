@@ -16,10 +16,11 @@
         
         <h1 class="add-question__heading">Create a new question</h1>
         <label for="question"><h2 class=add-question__heading1>Your question:</h2></h2></label>
-        <textarea id="question" name="question" class="add-question__textarea"></textarea>
+        <textarea id="question" name="question" class="add-question__textarea" maxlength="150" data-js="question"></textarea>
+        <p class="remaing-character" data-js="remaining-characters-question">150 characters left</p>
         <label for="answer"><h2 class="add-question__heading1">Your question:</h2></h2></label>
-        <textarea id="answer" name="answer" class="add-answer__textarea"></textarea>
-      
+        <textarea id="answer" name="answer" class="add-answer__textarea" maxlength="150" data-js="answer" ></textarea>
+        <p class="remaing-character" data-js="remaining-characters-answer">150 characters left</p>
         <label for="tag"><h2 class="add-question__heading1">Tag:</h2></label>
         <input type="text" id="tag" class="add-tag__input" name="tag" minlength="4" maxlength="8"/>
         <button type="submit" class="add-buttom">Submit</button>
