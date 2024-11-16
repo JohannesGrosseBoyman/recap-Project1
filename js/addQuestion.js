@@ -6,8 +6,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData);
-  console.log("Data ", data);
-  console.log(data.question);
+
   const question = data.question;
   const answer = data.answer;
   const tag = data.tag;
@@ -23,14 +22,26 @@ form.addEventListener("submit", (event) => {
   newArticle.appendChild(newSvg);
   newSvg.classList.add("question-card__icon");
   // the following code I fetched from chatGPT
-  // fetch the svg file
+  // fetch the svg file with an HTTP request
   fetch("assets/bookmark.svg")
-    .then((response) => response.text())
+    .then((response) => response.text()) // process the response into text(svgContent)
     .then((svgContent) => {
       newSvg.innerHTML = svgContent; // Insert the SVG content
+      // Query the embedded SVG`s path element
+      const svgPath = newSvg.querySelector("path");
+      // add click event listener to toggle the "fill" attribute
+      newSvg.addEventListener("click", () => {
+        const currentFill = svgPath.getAttribute("fill");
+        svgPath.setAttribute(
+          "fill",
+          currentFill === "white" ? "black" : "white"
+        );
+      });
     })
     .catch((error) => console.error("Error fetching SVG:", error));
   // end of ChatGPT code
+  // add data-js to newSvg
+  newSvg.setAttribute("data-js", "newSvg");
   const newQuestion = document.createElement("h3");
   newArticle.appendChild(newQuestion);
   newQuestion.classList.add("question-card__question");
@@ -40,10 +51,14 @@ form.addEventListener("submit", (event) => {
   newButton.setAttribute("type", "text");
   newButton.classList.add("btn-answer");
   newButton.textContent = "Show Answer";
+  // add data-js to newButton
+  newButton.setAttribute("data-js", "newButton");
   const newAnswer = document.createElement("p");
   newArticle.appendChild(newAnswer);
   newAnswer.classList.add("question-card__answer");
   newAnswer.textContent = answer;
+  // add data-js to newAnswer
+  newAnswer.setAttribute("data-js", "answer");
   const newUl = document.createElement("ul");
   newArticle.appendChild(newUl);
   newUl.classList.add("category");
@@ -54,18 +69,36 @@ form.addEventListener("submit", (event) => {
 
   event.target.elements.question.focus();
   event.target.reset();
+
+  newButton.addEventListener("click", () => {
+    if (newAnswer.style.display === "block") {
+      newAnswer.style.display = "none";
+      newButton.textContent = "Show Answer";
+    } else {
+      newAnswer.style.display = "block";
+      newButton.textContent = "Hide Answer";
+    }
+  });
 });
 
 const inputQuestion = document.querySelector(`[data-js="question"]`);
-const remainingCharQuestion = document.querySelector(`[data-js="remaining-characters-question"]`);
+const remainingCharQuestion = document.querySelector(
+  `[data-js="remaining-characters-question"]`
+);
 
 inputQuestion.addEventListener("input", (event) => {
-    remainingCharQuestion.textContent = `${150 - event.target.value.length} characters left`;
-})
+  remainingCharQuestion.textContent = `${
+    150 - event.target.value.length
+  } characters left`;
+});
 
 const inputAnswer = document.querySelector(`[data-js="answer"]`);
-const remainingCharAnswer = document.querySelector(`[data-js="remaining-characters-answer"]`);
+const remainingCharAnswer = document.querySelector(
+  `[data-js="remaining-characters-answer"]`
+);
 
 inputAnswer.addEventListener("input", (event) => {
-    remainingCharAnswer.textContent = `${150 - event.target.value.length} characters left`;
-})
+  remainingCharAnswer.textContent = `${
+    150 - event.target.value.length
+  } characters left`;
+});
