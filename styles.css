@@ -123,3 +123,10 @@ input:checked + .button::before {
 input {
   display: none;
 }
+
+.dark-mode {
+  --color-dark: #a7668b;
+  --color-light-grey: #e7e6e5;
+  --color-grey: black;
+  --color-purple: #7d1fc6;
+}
